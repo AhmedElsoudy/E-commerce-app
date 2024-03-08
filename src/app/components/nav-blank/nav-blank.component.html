@@ -1,0 +1,72 @@
+<nav #navBar
+  class="navbar navbar-expand-md navbar-light bg-light fixed-top"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink=""><img src="./assets/images/freshcart-logo.svg" class="w-100" alt="fresh cart logo"></a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="/home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="/brands">Brands</a>
+        </li>
+
+      </ul>
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center">
+
+        <li class="nav-item mx-1">
+          <a class="nav-link position-relative" routerLink="/wishlist">
+            <i class="fa-solid fa-heart fs-3 text-danger"></i>
+            <span class="badge cart-span-color position-absolute top-0 end-0">{{wishListNumber}}</span>
+          </a>
+        </li>
+
+        <li class="nav-item mx-1">
+          <a class="nav-link position-relative"  routerLink="/cart">
+            <i class="fa-solid fa-cart-shopping fs-3 text-main"></i>
+            <span class="badge cart-span-color position-absolute top-0 end-0">{{shopNumber}}</span>
+          </a>
+        </li>
+        <li class="nav-item d-flex gap-3 me-3">
+          <a href="" class="text-dark"><i class="fab fa-instagram"></i></a>
+          <a href="" class="text-dark"><i class="fab fa-facebook"></i></a>
+          <a href="" class="text-dark"><i class="fab fa-twitter"></i></a>
+          <a href="" class="text-dark"><i class="fab fa-linkedin"></i></a>
+        </li>
+        <!-- <li class="nav-item ">
+
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user fs-4 text-main bg-secondary-subtle p-1 rounded-5"></i>
+          </a>
+          <ul class="dropdown-menu ">
+            <li> <span (click)="signOut()" role="button" class="text-main fw-bold small">SignOut</span></li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

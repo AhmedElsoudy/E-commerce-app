@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+
+
+
+$main-color:#0aad0a;
+$light-color:#f0f3f2;
+$shadow:rgba(145,158,171,0.2) 0px 2px 4px -1px,
+  rgba(145,158,171,0.14) 0px 4px 5px 0px,
+  rgba(145,158,171,0.12) 0px 1px 10px 0px;
+$main-family: "Encode Sans Expanded", sans-serif;
+$rating-color:#ffc908;
+$main-transition:0.8s;
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background-color: $light-color;
+}
+::-webkit-scrollbar-thumb{
+  background-color: $main-color;
+}
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.15rem rgb(100, 248, 100);
+}
+// rgb(10,173,10)
+body{
+  font-family: $main-family;
+}
+.text-main{
+  color: $main-color;
+}
+.text-main-light{
+  color: $light-color;
+}
+.bg-main-light{
+  background-color: $light-color;
+}
+.bg-main{
+  background-color: $main-color;
+}
+.rating-color{
+  color: $rating-color;
+}
+.font-sm{
+  font-size: 11px;
+}
+.font-2sm{
+  font-size: 13px;
+}
+.main-btn{
+  background-color: $main-color;
+  color: #fff;
+  border-radius: 5px;
+  border: unset;
+  cursor:pointer;
+  padding: 4px 8px;
+  transition: background-color 0.5s;
+
+  &:disabled{
+    background-color: #078e076c;
+    color:#ffffff9c;
+    cursor: not-allowed;
+  }
+}
+.product{
+  border: 1px solid $main-color;
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: $shadow;
+  overflow: hidden;
+
+  .cart-shopping{
+    top: 340px;
+    bottom: 0;
+    right: 0;
+    left: 200px;
+    transition: left 0.7s;
+  }
+  &:hover{
+    .cart-shopping{
+      left: 160px;
+    }
+  }
+
+  .heart{
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: -50px;
+    z-index: 999;
+    transition: right 0.7s;
+  }
+
+  &:hover{
+    .heart{
+      right: 5px;
+    }
+  }
+
+  .delete{
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    left: -50px;
+    z-index: 999;
+    transition: left 0.7s;
+  }
+  &:hover{
+    .delete{
+      left: 5px;
+    }
+  }
+}
+
+.active-link{
+  color: #fff !important;
+  background-color: $main-color !important;
+  border-radius: 5px !important ;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+.product:hover {
+  box-shadow: 0 0 10px #11bd1168;
+}
+.main-btn:hover {
+  background-color: #11bd11;
+}
+.cart-span-color{
+  background-color: #114232;
+}
+
+.download-img{
+  width: 20px;
+  height: 20px;
+}
