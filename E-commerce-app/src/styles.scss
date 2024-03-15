@@ -80,14 +80,15 @@ body{
   overflow: hidden;
 
   .cart-shopping{
-
-    bottom: 5px;
-    right: -50px;
-    transition: right 0.7s;
+    top: 340px;
+    bottom: 0;
+    right: 0;
+    left: 200px;
+    transition: left 0.7s;
   }
   &:hover{
     .cart-shopping{
-      right: 5px;
+      left: 160px;
     }
   }
 

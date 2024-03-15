@@ -1,0 +1,35 @@
+<section>
+  <div class="container">
+    <div class="my-4 w-75 mx-auto shadow rounded-4 bg-main-light p-4">
+      <h2 class="fw-normal fs-3  ">Login Now  </h2>
+      <form [formGroup]="loginForm" (ngSubmit)="handleForm()">
+        <div class="input-email mb-2">
+          <label for="email">email:</label>
+          <input formControlName ="email" type="email" id="email" class="form-control" #inputEmail>
+          <div class="alert alert-danger  w-50 mx-auto small text-center mt-1" *ngIf="loginForm.get('email')?.errors &&(loginForm.get('email')?.touched || inputEmail.value.length > 0)">
+            <p class="mb-0 " *ngIf="loginForm.get('email')?.getError('required')">email is required</p>
+            <p class="mb-0 " *ngIf="loginForm.get('email')?.getError('email')">email is in valid</p>
+
+          </div>
+        </div>
+        <div class="input-password mb-2">
+          <label for="password">password:</label>
+          <input formControlName ="password" type="password" id="password" class="form-control" #inputPassword>
+          <div class="alert alert-danger  w-75 mx-auto small text-center mt-1" *ngIf="loginForm.get('password')?.errors && (loginForm.get('password')?.touched || inputPassword.value.length > 0)">
+            <p class="mb-0" *ngIf="loginForm.get('password')?.getError('required')">password is required</p>
+            <p class="mb-0" *ngIf="loginForm.get('password')?.getError('pattern')">password must start with upperCase then from 6 to 10</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <button class="main-btn  my-2 " >
+            <span *ngIf="isLoading"><i  class="fa-solid fa-spinner fa-spin"></i></span>
+            Login
+          </button>
+          <p class="text-main" role="button" routerLink="/forgetPassword">?ForgetPassword</p>
+        </div>
+        <p *ngIf="msgError" class="text-center text-danger pt-2">{{msgError}}</p>
+      </form>
+    </div>
+
+  </div>
+</section>

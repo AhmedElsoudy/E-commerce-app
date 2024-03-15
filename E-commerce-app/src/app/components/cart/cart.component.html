@@ -1,0 +1,33 @@
+<section class="w-75 mx-auto rounded shadow bg-main-light p-3 my-5" *ngIf="cartProductDetails;else info">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>Shop Cart</h2>
+    <button class="btn btn-sm btn-outline-danger" (click)="clearAll()">Clear Cart</button>
+
+  </div>
+  <p class="text-main">Total Price: {{cartProductDetails.totalCartPrice | currency :' '}} EGP</p>
+
+  <div class="row border-bottom py-2" *ngFor="let item of cartProductDetails.products">
+    <div class="col-md-1">
+      <img class="w-100" [src]="item.product.imageCover" [alt]="item.product.title">
+    </div>
+    <div class="col-md-11 d-flex justify-content-between align-items-center">
+      <div>
+        <h3 class="h6">{{item.product.title | cuttext : 10}}</h3>
+        <p class="text-main small m-0">Price: {{item.price| currency:' '}} EGP</p>
+        <button class="text-main btn m-0 p-0 small" (click)="removeItem(item.product._id)"><i class="fa-solid fa-trash-can"></i> Remove</button>
+      </div>
+      <div>
+        <button #plus class="btn btn-sm border-success fw-bold" (click)="changeQuantity(item.count + 1, item.product._id, plus,Subtract )">+</button>
+        <span> {{item.count}} </span>
+        <button #Subtract class="btn btn-sm border-success fw-bold" (click)="changeQuantity(item.count - 1, item.product._id, plus,Subtract )">-</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="main-btn mt-3 d-block ms-auto" [routerLink]="['/payment',cartProductDetails._id ]">Online Payment <img src="./assets/images/visa-1.svg" alt="visa logo"></button>
+
+</section>
+
+<ng-template #info>
+  <h3 class="text-main text-center py-5">Your Cart is Empty....</h3>
+</ng-template>
